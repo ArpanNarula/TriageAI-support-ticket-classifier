@@ -3,7 +3,7 @@ services:
     image: mongo:6
     restart: unless-stopped
     volumes:
-      - mongo_data_mac:/data/db
+      - mongo_data_mac:/data/db 
     healthcheck:
       test: ["CMD-SHELL", "mongosh --quiet --eval 'db.adminCommand({ ping: 1 }).ok' | grep 1"]
       interval: 10s

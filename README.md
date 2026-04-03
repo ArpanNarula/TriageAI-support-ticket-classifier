@@ -21,7 +21,7 @@ This project was built for a full-stack assignment with the constraint that no e
 - Database: MongoDB + Mongoose
 - Containers: Docker + docker-compose
 
-## Run With Docker
+## Quick Start (Docker)
 
 ```bash
 docker-compose up --build
