@@ -1,0 +1,43 @@
+TriageAI - Test Results
+======================
+Run command: cd backend && npm test
+Date: April 2025
+
+--- Classification Tests ---
+  ✓ billing ticket: detects 'payment' and 'invoice'
+  ✓ technical ticket: detects 'bug' and 'crash'
+  ✓ account ticket: detects 'login' and 'password'
+  ✓ feature request: detects 'feature' and 'add'
+  ✓ unknown ticket: falls back to 'other'
+
+--- Priority Tests ---
+  ✓ P0: system down scenario
+  ✓ P1: urgent billing issue
+  ✓ P2: normal technical issue
+  ✓ P3: feature request always low priority
+
+--- Custom Rule Tests ---
+  ✓ custom rule: 'refund' + 'not received' → billing P1
+  ✓ only 'refund' without 'not received' → normal flow
+
+--- Urgency Detection Tests ---
+  ✓ detects 'asap' as urgency signal
+  ✓ no urgency signals in normal ticket
+
+--- Confidence Score Tests ---
+  ✓ confidence should be between 0 and 1
+  ✓ empty message should throw an error
+
+--- Results: 15 passed, 0 failed ---
+
+======================
+Test Coverage Areas:
+- Category classification (5 tests) - billing, technical, account, feature, fallback
+- Priority assignment (4 tests) - all P0 through P3 scenarios
+- Custom business rule (2 tests) - trigger + non-trigger case
+- Urgency detection (2 tests) - signal present + signal absent
+- Confidence scoring (1 test) - bounds check
+- Input validation (1 test) - empty message error
+
+No external test frameworks used.
+Runner: plain Node.js (node tests/analyzer.test.js)
