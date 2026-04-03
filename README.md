@@ -5,7 +5,7 @@ A full-stack web application that accepts support tickets, classifies them using
 ---
 
 ## Quick Start (Docker)
-
+ 
 ```bash
 git clone <repo-url>
 cd ticket-triage
