@@ -1,5 +1,3 @@
-// Category keyword config - adding more words makes this more accurate
-// Keeping this as a separate config so it's easy to update later
 const CATEGORY_KEYWORDS = {
   billing: [
     "refund", "payment", "charged", "invoice", "billing",
@@ -21,7 +19,6 @@ const CATEGORY_KEYWORDS = {
   ]
 };
 
-// Returns the best category + how many keyword matches we got
 function classify(message) {
   const lower = message.toLowerCase();
   const scores = {};
@@ -40,7 +37,6 @@ function classify(message) {
     scores[category] = { hits, matched };
   }
 
-  // Find the category with the most hits
   let bestCategory = "other";
   let maxHits = 0;
   let allMatched = [];
@@ -53,14 +49,13 @@ function classify(message) {
     allMatched = allMatched.concat(data.matched);
   }
 
-  // Remove duplicates in keywords list
   const uniqueKeywords = [...new Set(allMatched)];
 
   return {
     category: bestCategory,
     keywords: uniqueKeywords,
     totalMatches: maxHits,
-    categoryScores: scores // keeping this for debugging if needed
+    categoryScores: scores
   };
 }
 

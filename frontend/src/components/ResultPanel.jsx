@@ -1,4 +1,3 @@
-// Shows the analysis result for the latest ticket
 function ResultPanel({ result }) {
   if (!result) return null;
 
@@ -9,7 +8,6 @@ function ResultPanel({ result }) {
       <p className="card-title">Analysis Result</p>
 
       <div className="result-grid">
-        {/* Category */}
         <div className="result-field">
           <span className="result-label">Category</span>
           <span className="result-value highlight" style={{ textTransform: "capitalize" }}>
@@ -17,7 +15,6 @@ function ResultPanel({ result }) {
           </span>
         </div>
 
-        {/* Priority */}
         <div className="result-field">
           <span className="result-label">Priority</span>
           <span className={`priority-badge priority-${result.priority}`}>
@@ -25,7 +22,6 @@ function ResultPanel({ result }) {
           </span>
         </div>
 
-        {/* Keywords */}
         <div className="result-field" style={{ gridColumn: "1 / -1" }}>
           <span className="result-label">Matched Keywords</span>
           {result.keywords.length > 0 ? (
@@ -39,7 +35,6 @@ function ResultPanel({ result }) {
           )}
         </div>
 
-        {/* Urgency signals */}
         <div className="result-field" style={{ gridColumn: "1 / -1" }}>
           <span className="result-label">Urgency Signals</span>
           {result.urgencySignals.length > 0 ? (
@@ -53,7 +48,6 @@ function ResultPanel({ result }) {
           )}
         </div>
 
-        {/* Confidence */}
         <div className="result-field" style={{ gridColumn: "1 / -1" }}>
           <span className="result-label">Confidence — {confidencePct}%</span>
           <div className="confidence-bar-wrap">
@@ -67,7 +61,6 @@ function ResultPanel({ result }) {
         </div>
       </div>
 
-      {/* Custom rule indicator */}
       {result.customRuleApplied && (
         <div className="custom-rule-badge">
           ⚡ Custom rule applied: "refund + not received" → Billing P1

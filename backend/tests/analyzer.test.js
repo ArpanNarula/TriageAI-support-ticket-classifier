@@ -1,6 +1,3 @@
-// Simple test runner - no external libraries needed
-// Run with: node tests/analyzer.test.js
-
 const { analyzeTicket } = require("../src/analyzer");
 
 let passed = 0;
@@ -43,9 +40,6 @@ function expect(value) {
   };
 }
 
-// ==============================
-// Classification tests
-// ==============================
 console.log("\n--- Classification Tests ---");
 
 test("billing ticket: detects 'payment' and 'invoice'", () => {
@@ -73,9 +67,6 @@ test("unknown ticket: falls back to 'other'", () => {
   expect(result.category).toBe("other");
 });
 
-// ==============================
-// Priority tests
-// ==============================
 console.log("\n--- Priority Tests ---");
 
 test("P0: system down scenario", () => {
@@ -98,9 +89,6 @@ test("P3: feature request always low priority", () => {
   expect(result.priority).toBe("P3");
 });
 
-// ==============================
-// Custom rule test
-// ==============================
 console.log("\n--- Custom Rule Tests ---");
 
 test("custom rule: 'refund' + 'not received' → billing P1", () => {
@@ -115,9 +103,6 @@ test("only 'refund' without 'not received' → normal flow", () => {
   expect(result.customRuleApplied).toBe(false);
 });
 
-// ==============================
-// Urgency detection tests
-// ==============================
 console.log("\n--- Urgency Detection Tests ---");
 
 test("detects 'asap' as urgency signal", () => {
@@ -130,9 +115,6 @@ test("no urgency signals in normal ticket", () => {
   expect(result.urgencySignals.length).toBe(0);
 });
 
-// ==============================
-// Confidence score tests
-// ==============================
 console.log("\n--- Confidence Score Tests ---");
 
 test("confidence should be between 0 and 1", () => {
@@ -151,8 +133,5 @@ test("empty message should throw an error", () => {
   if (!threw) throw new Error("Expected an error but none was thrown");
 });
 
-// ==============================
-// Results
-// ==============================
 console.log(`\n--- Results: ${passed} passed, ${failed} failed ---\n`);
 if (failed > 0) process.exit(1);

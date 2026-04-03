@@ -26,7 +26,7 @@ function TicketForm({ onResult, onError }) {
       }
 
       onResult(data);
-      setMessage(""); // clear after submit
+      setMessage("");
     } catch (err) {
       onError(err.message || "Something went wrong, try again");
     } finally {
@@ -35,7 +35,6 @@ function TicketForm({ onResult, onError }) {
   }
 
   function handleKeyDown(e) {
-    // Ctrl+Enter to submit - small QoL thing
     if (e.ctrlKey && e.key === "Enter") {
       handleSubmit();
     }

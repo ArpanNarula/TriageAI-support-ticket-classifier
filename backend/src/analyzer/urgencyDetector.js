@@ -1,4 +1,3 @@
-// Words that suggest something is time-sensitive or blocking the user
 const URGENCY_WORDS = [
   "urgent", "urgently", "asap", "immediately", "critical",
   "blocked", "blocking", "down", "outage", "emergency",

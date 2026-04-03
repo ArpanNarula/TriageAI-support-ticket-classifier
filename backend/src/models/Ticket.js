@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-// Keeping the schema lean - only what we actually need
 const ticketSchema = new mongoose.Schema(
   {
     message: {
@@ -32,7 +31,7 @@ const ticketSchema = new mongoose.Schema(
     }
   },
   {
-    timestamps: true // gives us createdAt + updatedAt for free
+    timestamps: true
   }
 );
 

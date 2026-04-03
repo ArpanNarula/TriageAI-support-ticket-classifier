@@ -6,7 +6,6 @@ import TicketList from "./components/TicketList";
 function App() {
   const [latestResult, setLatestResult] = useState(null);
   const [error, setError] = useState(null);
-  // This counter bumps whenever a ticket is saved, which triggers TicketList to refetch
   const [refreshCount, setRefreshCount] = useState(0);
 
   function handleResult(data) {
@@ -26,9 +25,7 @@ function App() {
       )}
 
       <TicketForm onResult={handleResult} onError={setError} />
-
       <ResultPanel result={latestResult} />
-
       <TicketList refreshTrigger={refreshCount} />
     </div>
   );

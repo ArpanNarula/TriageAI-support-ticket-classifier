@@ -5,7 +5,6 @@ function TicketList({ refreshTrigger }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Fetch whenever a new ticket is submitted (refreshTrigger changes)
   useEffect(() => {
     fetchTickets();
   }, [refreshTrigger]);
