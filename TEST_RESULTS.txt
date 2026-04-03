@@ -6,7 +6,7 @@ Date: April 2025
 --- Classification Tests ---
   ✓ billing ticket: detects 'payment' and 'invoice'
   ✓ technical ticket: detects 'bug' and 'crash'
-  ✓ account ticket: detects 'login' and 'password'
+  ✓ account ticket: detects 'login' and 'password' 
   ✓ feature request: detects 'feature' and 'add'
   ✓ unknown ticket: falls back to 'other'
 
