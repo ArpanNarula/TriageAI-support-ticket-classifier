@@ -2,7 +2,7 @@
 
 TriageAI is a small full-stack app that analyzes support tickets using local heuristic logic, stores them in MongoDB, and shows the results in a simple UI.
 
-This project was built for a full-stack assignment with the constraint that no external AI or LLM APIs could be used.
+This project was built for a full-stack assignment with the constraint that no external AI or LLM APIs could be used. 
 
 ## Features
 
